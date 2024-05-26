@@ -1,7 +1,6 @@
 import { ScrollArea } from "@radix-ui/react-scroll-area";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
-import { toggleItemModal } from "@/slices/appSlice";
 import {
   Dialog,
   DialogContent,
@@ -12,12 +11,10 @@ import {
 } from "@/components/ui/dialog";
 
 export default function ImageList({}) {
-  const { hits } = useSelector((state) => state.app);
-  const dispatch = useDispatch();
+  // each photo is displaying by it's preview image and then if it is selected,
+  // another dialog (modal) will appear with relevant details
 
-  const handleOnclick = () => {
-    dispatch(toggleItemModal());
-  };
+  const { hits } = useSelector((state) => state.app);
   return (
     <ScrollArea className="h[400px] flex justify-center items-center p-10 ">
       <div className="grid grid-cols-3 gap-1" key="unique1">
@@ -32,7 +29,6 @@ export default function ImageList({}) {
                     width={150}
                     src={hit.previewURL}
                     key={index}
-                    onClick={handleOnclick}
                   />
                 </DialogTrigger>
                 <DialogContent>

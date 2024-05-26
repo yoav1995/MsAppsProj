@@ -16,7 +16,6 @@ import { Button } from "@/components/ui/button";
 function App() {
   const { showModal, page, category, hits } = useSelector((state) => state.app);
   const dispatch = useDispatch();
-  const [currentCat, setCurrentCat] = useState(null); /// why is this here?
 
   useEffect(() => {
     try {

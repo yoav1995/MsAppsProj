@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import {
   Dialog,
   DialogContent,
@@ -8,7 +8,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-
 import { Button } from "@/components/ui/button";
 import { setCategory, toggleModal } from "@/slices/appSlice";
 const values = [
@@ -35,7 +34,7 @@ const values = [
 export default function Modal() {
   const { showModal, category } = useSelector((state) => state.app);
   const dispatch = useDispatch();
-  const selectRef = useRef();
+  const selectRef = useRef(); // a ref to the value of each category, made for dynamic category replace
 
   const onSubmit = () => {
     if (selectRef?.current) {
