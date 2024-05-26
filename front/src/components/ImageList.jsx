@@ -20,11 +20,11 @@ export default function ImageList({}) {
   };
   return (
     <ScrollArea className="h[400px] flex justify-center items-center p-10 ">
-      <div className="grid grid-cols-3 gap-1">
+      <div className="grid grid-cols-3 gap-1" key="unique1">
         {hits &&
           hits.map((hit, index) => {
             return (
-              <Dialog>
+              <Dialog key={index}>
                 <DialogTrigger asChild>
                   <img
                     className="p-0 rounded hover:drop-shadow-2xl"
