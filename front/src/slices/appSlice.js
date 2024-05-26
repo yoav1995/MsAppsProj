@@ -3,6 +3,7 @@ const initialState = {
 	category: '',
 	page: 0,
 	showModal: false,
+	showItemModal: false,
 	hits: [],
 };
 
@@ -25,9 +26,12 @@ export const appSlice = createSlice({
 		setCategory: (state, { payload }) => {
 			state.category = payload;
 		},
+		toggleItemModal: (state, { payload }) => {
+			state.showItemModal = !state.showItemModal;
+		},
 	},
 });
 
-export const { next, prev, toggleModal, setHits, setCategory } =
+export const { next, prev, toggleModal, setHits, setCategory ,toggleItemModal} =
 	appSlice.actions;
 export default appSlice.reducer;
