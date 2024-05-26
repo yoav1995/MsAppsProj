@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import store from "./store";
 import { useSelector, useDispatch } from "react-redux";
 import {
   next,
@@ -53,5 +52,3 @@ function App() {
 }
 
 export default App;
-
-//http://localhost:3000/?category=work&page=3
